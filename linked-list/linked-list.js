@@ -16,16 +16,26 @@ class LinkedList {
             //this.head = new Node(value, this.head); JB's solution. This works without if..else
         }
     };
-    includes(value){
-        let currentNode = this.head;
-        while(currentNode.next !== null){
-            if(currentNode.value === this.value){
-                currentNode = currentNode.next;
+    includes(value) {
+        // let currentNode = this.head;
+        while (this.head) {
+            if (this.head.value === value) {
                 return true;
-            }          
+            } else {
+                this.head = this.head.next;
+            }
         }
-        if (currentNode.value !== this.value)
         return false;
+    };
+
+    print() {
+        let currentNode = this.head;
+        let printArray = [];
+        while(currentNode){
+            printArray.push(currentNode.value);
+            currentNode = currentNode.next;
+        }
+        return printArray.join(',');
     }
 };
 
@@ -35,8 +45,6 @@ class Node {
         this.next = next;
     };
 };
-
-
 
 
 
