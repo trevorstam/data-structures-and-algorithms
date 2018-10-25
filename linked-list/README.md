@@ -15,5 +15,5 @@ Write at least three test assertions for each method that you define.
 Ensure your tests are passing before you submit your solution.
 
 ### Whiteboard Solution:
-![linked list insertions](./assets/ll-list-insertions.jpg)
+![linked list insertions](./assets/ll-insertions.png)
 
