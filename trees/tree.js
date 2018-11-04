@@ -48,11 +48,9 @@ class BinaryTree {
       if (node.rightChild !== null) {
         grabInOrder(node.rightChild);
       }
-
     }
     grabInOrder(node);
     return arrayReturn;
-
   }
   postOrder(node = this.root) {
     let arrayReturn = [];
@@ -69,23 +67,57 @@ class BinaryTree {
         grabPostOrder(node.rightChild);
       }
       arrayReturn.push(node.value);
-
-
     }
     grabPostOrder(node);
     return arrayReturn;
   }
-
 }
 
 class BinarySearchTree {
   constructor(root = null) {
     this.root = root;
   }
-  add() {
+  add(node) {
+    if (this.root === null) {
+      this.root = node;
+      return;
+    }
+    let currentNode = this.root;
+    while (currentNode !== null) {
+      if (node.value < currentNode.value) {
+        currentNode = currentNode.leftChild;
+      } else {
+        currentNode.leftChild = node;
+        return;
+      }
+
+      if (node.value > currentNode.value) {
+        currentNode = currentNode.rightChild;
+      } else {
+        currentNode.rightChild = node;
+        return;
+      }
+    }
 
   }
-  search() {
-
+  search(value) {
+    if (this.root === null) {
+      return null;
+    }
+    let currentNode = this.root;
+    while (currentNode !== null) {
+      if (value < currentNode.value) {
+        currentNode = currentNode.leftChild;
+      } else {
+        currentNode = currentNode.rightChild;
+      }
+    }
+    return currentNode;
   }
 }
+
+module.exports = {
+  Node,
+  BinaryTree,
+  BinarySearchTree,
+};
