@@ -1,0 +1,17 @@
+{
+  "name": "trees",
+  "version": "1.0.0",
+  "description": "Katherine Smith & Trevor Stam",
+  "main": "fizz-buzz-tree.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.8.0",
+    "jest": "^23.6.0"
+  },
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
