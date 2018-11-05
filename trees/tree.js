@@ -111,11 +111,12 @@ class BinarySearchTree {
     while (currentNode !== null) {
       if (value < currentNode.value) {
         currentNode = currentNode.leftChild;
-      } else {
+      } else if (value > currentNode.value) {
         currentNode = currentNode.rightChild;
+      } else {
+        return currentNode;
       }
     }
-    return currentNode;
   }
 }
 
