@@ -45,7 +45,7 @@ describe('Graph', () => {
     expect(graph).toBeInstanceOf(Graph);
   });
 
-  describe('addDirectedEdge method', () => { //this method also shows us that the addVertex method works
+  describe('addDirectedEdge method', () => {
     const graph = new Graph();
     const ten = new Vertex(10);
     const two = new Vertex(2);
@@ -68,5 +68,19 @@ describe('Graph', () => {
       expect(graph.size()).toEqual(6);
     });
   });
+
+  describe('getNeighbors method', () => {
+    it('should return the number of neighbors of a vertex', () => {
+      expect(graph.getNeighbors(six).length).toEqual(2);
+    });
+    it('should return the correct neighbor when there is one neighbor', ()=>{
+      expect(graph.getNeighbors(eight)[0].vertex.value).toEqual(7);
+    });
+    it('should return the correct neighbor when there are 2 neighbors', () => {
+      expect(graph.getNeighbors(six)[1].vertex.value).toEqual(8);
+    });
+  });
+
+
 
 });
